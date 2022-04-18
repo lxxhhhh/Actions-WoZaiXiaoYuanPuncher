@@ -11,7 +11,9 @@ import urllib
 import urllib.parse
 from urllib.parse import urlencode
 from urllib3.util import Retry
-
+sign_time=int(round(time.time()*1000))
+content =f"陕西省_{sign_time_}_西安市"
+signature=hashlib.sha256(content.encode('utf-8')).hexdigest()
 
 class WoZaiXiaoYuanPuncher:
     def __init__(self):
@@ -158,6 +160,9 @@ class WoZaiXiaoYuanPuncher:
             "street": os.environ['WZXY_STREET'],
             "myArea": "",
             "areacode": "",
+            "city_code":"156610100",
+            "timestampHeader":sign_time,
+            "signatureHeader":signature,
             "userId": ""
         }
         data = urlencode(sign_data)
@@ -188,7 +193,7 @@ class WoZaiXiaoYuanPuncher:
     def getResult(self):
         res = self.status_code
         if res == 1:
-            return "✅ 打卡成功"
+            return "✅ 恭喜张先生，打卡成功"
         elif res == 2:
             return "✅ 你已经打过卡了，无需重复打卡"
         elif res == 3:
