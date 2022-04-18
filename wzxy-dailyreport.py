@@ -12,7 +12,7 @@ import urllib.parse
 from urllib.parse import urlencode
 from urllib3.util import Retry
 sign_time=int(round(time.time()*1000))
-content =f"陕西省_{sign_time_}_西安市"
+content =f"陕西省_{sign_time}_西安市"
 signature=hashlib.sha256(content.encode('utf-8')).hexdigest()
 
 class WoZaiXiaoYuanPuncher:
