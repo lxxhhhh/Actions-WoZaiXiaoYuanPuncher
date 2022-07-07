@@ -85,7 +85,7 @@ class WoZaiXiaoYuanPuncher:
 
     # 获取打卡列表，判断当前打卡时间段与打卡情况，符合条件则自动进行打卡
     def PunchIn(self):
-        self.status_code = 10
+        
         print("获取打卡列表中...")
         url = "https://student.wozaixiaoyuan.com/heat/getTodayHeatList.json"
         self.header['Host'] = "student.wozaixiaoyuan.com"
@@ -175,6 +175,7 @@ class WoZaiXiaoYuanPuncher:
             self.status_code = 1
             print("打卡成功")
         else:
+            self.status_code = 10
             print(response)
             print("打卡失败")
                 
