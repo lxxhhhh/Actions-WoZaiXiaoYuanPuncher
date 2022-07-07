@@ -159,7 +159,7 @@ class WoZaiXiaoYuanPuncher:
             "district": os.environ['WZXY_DISTRICT'],
             "province": os.environ['WZXY_PROVINCE'],
             "township": os.environ['WZXY_TOWNSHIP'],
-            "street": os.environ['WZXY_STREET'],
+            "street": 学府中路2号,
             "myArea": "",
             "areacode": "",
             "userId": "",
