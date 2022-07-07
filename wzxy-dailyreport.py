@@ -192,7 +192,7 @@ class WoZaiXiaoYuanPuncher:
     # 获取打卡结果
     def getResult(self):
         res = self.status_code
-        if res == 1:
+        if res == 0:
             return "✅ 恭喜张先生，打卡成功"
         elif res == 2:
             return "✅ 你已经打过卡了，无需重复打卡"
