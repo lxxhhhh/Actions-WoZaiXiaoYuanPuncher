@@ -159,7 +159,7 @@ class WoZaiXiaoYuanPuncher:
             "district": os.environ['WZXY_DISTRICT'],
             "province": os.environ['WZXY_PROVINCE'],
             "township": os.environ['WZXY_TOWNSHIP'],
-            "street": 学府中路2号,
+            "street": os.environ['WZXY_STREET'],
             "myArea": "",
             "areacode": "",
             "userId": "",
@@ -171,7 +171,6 @@ class WoZaiXiaoYuanPuncher:
         self.session = requests.session()    
         response = self.session.post(url=url, data=data, headers=self.header)
         response = json.loads(response.text)
-        self.status_code = 10
         # 打卡情况
         if response["code"] == 0:
             self.status_code = 1
