@@ -93,7 +93,6 @@ class WoZaiXiaoYuanPuncher:
         self.session = requests.session()
         response = self.session.post(url=url, data=self.body, headers=self.header)
         res = json.loads(response.text)
-        self.status_code = 10
         # 如果 jwsession 无效，则重新 登录 + 打卡
         if res['code'] == -10:
             print(res)
@@ -172,6 +171,7 @@ class WoZaiXiaoYuanPuncher:
         self.session = requests.session()    
         response = self.session.post(url=url, data=data, headers=self.header)
         response = json.loads(response.text)
+        self.status_code = 10
         # 打卡情况
         if response["code"] == 0:
             self.status_code = 1
