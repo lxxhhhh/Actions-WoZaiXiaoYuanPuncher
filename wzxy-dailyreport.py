@@ -102,6 +102,7 @@ class WoZaiXiaoYuanPuncher:
             if loginStatus:
                 self.PunchIn()
             else:
+                self.status_code = 10
                 print(res)
                 print("重新登录失败，请检查账号信息")     
         elif res['code'] == 0:                    
@@ -175,7 +176,7 @@ class WoZaiXiaoYuanPuncher:
             self.status_code = 1
             print("打卡成功")
         else:
-            self.status_code = 10
+            
             print(response)
             print("打卡失败")
                 
